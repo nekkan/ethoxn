@@ -32,7 +32,8 @@ kotlin {
                 api(kotlin("stdlib-common"))
                 api(antlrDependency)
             }
-            kotlin.srcDir("build/generated-src/antlr/kotlin")
+            kotlin.srcDir("antlr/sources")
+            resources.srcDir("antlr/resources")
         }
         val commonMain by getting {
             dependsOn(antlr)
@@ -50,7 +51,6 @@ tasks.register<com.strumenta.antlrkotlin.gradleplugin.AntlrKotlinTask>("generate
         .srcDir("src/antlr").apply {
             include("*.g4")
         }
-    outputDirectory = File("build/generated-src/antlr/kotlin")
 }
 
 tasks.getByName("compileKotlinJvm").dependsOn("generateKotlinCommonGrammarSource")
