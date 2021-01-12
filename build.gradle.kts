@@ -32,14 +32,23 @@ allprojects {
                 kotlin.srcDir("shared/sources")
                 resources.srcDir("shared/resources")
             }
+            val commonTest by getting {
+                kotlin.srcDir("shared/test")
+            }
             val jvmMain by getting {
                 kotlin.srcDir("jvm/sources")
                 resources.srcDir("jvm/resources")
+            }
+            val jvmTest by getting {
+                kotlin.srcDir("jvm/test")
             }
             if(isNativeSupported) {
                 val nativeMain by getting {
                     kotlin.srcDir("native/sources")
                     resources.srcDir("native/resources")
+                }
+                val nativeTest by getting {
+                    kotlin.srcDir("native/test")
                 }
             }
         }
