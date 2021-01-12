@@ -12,3 +12,5 @@ pluginManagement {
         kotlin("jvm") version kotlin
     }
 }
+
+include(":grammar")
