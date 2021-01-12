@@ -21,6 +21,8 @@ booleanExpr: TRUE
 // file
 program: usages? decl* EOF;
 
+pkg: PACKAGE value=IDENTIFIER;
+
 usages: usageDirective*;
 
 usageDirective: USE module=STRING SEMICOLON;
