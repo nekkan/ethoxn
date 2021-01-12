@@ -1,0 +1,10 @@
+pkg idk;
+
+use ethoxn.builtin.io.[println, for_each];
+use ethoxn.builtin.collections.Array;
+
+func main(args: Array[str]): void {
+    for_each(args) -> { value(str):
+        println! value;
+    };
+}
