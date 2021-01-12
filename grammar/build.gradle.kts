@@ -34,8 +34,12 @@ kotlin {
             }
             kotlin.srcDir("antlr/sources")
             resources.srcDir("antlr/resources")
+            kotlin.srcDir("build/generated-src/shared/sources")
         }
         val commonMain by getting {
+            dependsOn(antlr)
+        }
+        val commonTest by getting {
             dependsOn(antlr)
         }
     }
@@ -48,9 +52,10 @@ tasks.register<com.strumenta.antlrkotlin.gradleplugin.AntlrKotlinTask>("generate
     arguments = listOf("-no-visitor", "-no-listener")
     source = project.objects
         .sourceDirectorySet("antlr", "antlr")
-        .srcDir("src/antlr").apply {
+        .srcDir("antlr/sources").apply {
             include("*.g4")
         }
+    outputDirectory = File("build/generated-src/shared/sources")
 }
 
 tasks.getByName("compileKotlinJvm").dependsOn("generateKotlinCommonGrammarSource")
