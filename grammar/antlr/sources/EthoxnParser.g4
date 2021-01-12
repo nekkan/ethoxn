@@ -23,7 +23,7 @@ program: usages? decl* EOF;
 
 usages: usageDirective*;
 
-usageDirective: USE module=IDENTIFIER SEMICOLON;
+usageDirective: USE module=STRING SEMICOLON;
 
 // type definitions
 nameType: name=IDENTIFIER;

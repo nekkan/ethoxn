@@ -48,7 +48,7 @@ kotlin {
 tasks.register<com.strumenta.antlrkotlin.gradleplugin.AntlrKotlinTask>("generateKotlinCommonGrammarSource") {
     antlrClasspath = configurations.detachedConfiguration(project.dependencies.create(antlrTarget))
     maxHeapSize = "64m"
-    packageName = "com.nekkan.grammar"
+    packageName = "com.nekkan.grammar.generated"
     arguments = listOf("-no-visitor", "-no-listener")
     source = project.objects
         .sourceDirectorySet("antlr", "antlr")
