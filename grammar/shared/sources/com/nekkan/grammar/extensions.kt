@@ -2,6 +2,8 @@
 
 package com.nekkan.grammar
 
+import com.nekkan.grammar.generated.EthoxnLexer
+import com.nekkan.grammar.generated.EthoxnParser
 import org.antlr.v4.kotlinruntime.CharStream
 import org.antlr.v4.kotlinruntime.CharStreams
 import org.antlr.v4.kotlinruntime.CommonTokenStream
