@@ -39,7 +39,7 @@ parameter: name=nameType COLON type=typeDefinition;
 
 variableType: LET MUTABLE? WHITESPACE name=nameType (COLON type=nameType)? ASSIGN value=expr;
 
-functionType: name=nameType LEFT_PARENTHESIS (parameter (COMMA parameter)*)? RIGHT_PARENTHESIS SEMICOLON returnType=typeDefinition;
+functionType: name=nameType LEFT_PARENTHESIS (parameter (COMMA parameter)*)? RIGHT_PARENTHESIS COLON returnType=typeDefinition;
 
 externalFunctionType: EXTERNAL functionType;
 
