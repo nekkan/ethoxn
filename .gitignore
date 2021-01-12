@@ -3,3 +3,4 @@
 build/
 jvm/**/build/
 shared/**/build/
+grammar/antlr/gen/*
