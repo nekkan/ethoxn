@@ -26,6 +26,9 @@ allprojects {
             compilations.all {
                 kotlinOptions.jvmTarget = "${rootProject.extra["jvm_target"]}"
             }
+            testRuns["test"].executionTask.configure {
+                useJUnitPlatform()
+            }
         }
         sourceSets {
             val commonMain by getting {
@@ -34,6 +37,9 @@ allprojects {
             }
             val commonTest by getting {
                 kotlin.srcDir("shared/test")
+                dependencies {
+                    implementation(kotlin("test-junit5"))
+                }
             }
             val jvmMain by getting {
                 kotlin.srcDir("jvm/sources")
