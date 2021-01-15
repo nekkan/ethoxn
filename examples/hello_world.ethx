@@ -1,0 +1,7 @@
+pkg idk;
+
+use "ethoxn.builtin.io.println";
+
+func main(args: [str]): Void {
+    println("Hello world!");
+}
